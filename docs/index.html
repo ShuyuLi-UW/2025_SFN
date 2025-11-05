@@ -13,7 +13,14 @@
       color: var(--ink);
       background: #fafafa;
     }
-    h1 { margin: 0 0 16px; font-size: 22px; color: var(--brand); }
+    h1 { margin: 0 0 12px; font-size: 24px; color: var(--brand); }
+    p.intro {
+      max-width: 900px;
+      font-size: 15px;
+      color: #444;
+      line-height: 1.6;
+      margin: 0 0 24px;
+    }
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -40,7 +47,7 @@
     }
     iframe {
       width: 100%;
-      height: 520px;   /* 需要更高可调这里 */
+      height: 520px;   /* 调整交互图高度 */
       border: 1px solid var(--line);
       border-radius: 8px;
       background: #fff;
@@ -58,6 +65,26 @@
 <body>
   <h1>Interactive Red Genetically Encoded Calcium Indicator Benchmark Test</h1>
 
+  <!-- 说明段落 -->
+  <p class="intro">
+    This interactive dashboard provides an overview of the experimental benchmarking results 
+    for a series of red genetically encoded calcium indicators (GECIs). Each interactive panel below corresponds 
+    to a different stage of characterization. From <b>in vitro titration curves</b> of purified proteins, to 
+    <b>cellular time traces</b> under field stimulation, and <b>summary plots</b> of key functional parameters.  
+    <br><br>
+    Use the legends to dynamically select or deselect individual GECIs for <b>direct side-by-side comparison</b>. 
+    Hover over any curve or data point to reveal detailed numerical values, fitted parameters, and confidence 
+    intervals. All panels are fully interactive, you can zoom, pan, and export individual figures directly 
+    from the interface.  
+    <br><br>
+    This site is intended as a reference for both experimentalists and computational biologists interested 
+    in the design, kinetics, and performance diversity of red GECIs. If you have questions, comments, or 
+    encounter any display issues, feel freen to contact 
+    <a href="mailto:lishuyu@uw.edu" style="color:#d14; text-decoration:none;">lishuyu@uw.edu</a>.
+    Cheers!
+  </p>
+
+  <!-- 主内容区 -->
   <div class="grid">
     <section class="panel a">
       <h2>
@@ -76,16 +103,14 @@
     </section>
   </div>
   
-    <section class="panel c">
-      <h2>
-        Summary of Field Stimulation (mean ± SEM)
-        <a class="btn" href="interactive_lineplots.html" target="_blank">Open in new tab</a>
-      </h2>
-      <iframe src="interactive_lineplots.html" title="Summary of Field Stimulation"></iframe>
-    </section>
+  <section class="panel c">
+    <h2>
+      Summary of Field Stimulation (mean ± SEM)
+      <a class="btn" href="interactive_lineplots.html" target="_blank">Open in new tab</a>
+    </h2>
+    <iframe src="interactive_lineplots.html" title="Summary of Field Stimulation"></iframe>
+  </section>
 
-
-
-  <footer>© Shuyu Li, Berndt Lab, University of Washington </footer>
+  <footer>© Shuyu Li, Berndt Lab, University of Washington</footer>
 </body>
 </html>
