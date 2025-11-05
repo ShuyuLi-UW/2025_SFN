@@ -15,11 +15,13 @@
     }
     h1 { margin: 0 0 12px; font-size: 24px; color: var(--brand); }
     p.intro {
-      max-width: 900px;
+      max-width: 1100px;          /* 限制最大宽度，但比原来更宽 */
+      width: 90%;                 /* 在大屏上自动适配 */
       font-size: 15px;
       color: #444;
-      line-height: 1.6;
-      margin: 0 0 24px;
+      line-height: 1.7;
+      margin: 0 auto 32px;        /* auto 水平居中、底部空白更宽 */
+      text-align: justify;        /* 自动换行并两端对齐 */
     }
     .grid {
       display: grid;
@@ -79,8 +81,9 @@
     <br><br>
     This site is intended as a reference for both experimentalists and computational biologists interested 
     in the design, kinetics, and performance diversity of red GECIs. If you have questions, comments, or 
-    encounter any display issues, feel freen to contact 
+    encounter any display issues, please feel freen to contact 
     <a href="mailto:lishuyu@uw.edu" style="color:#d14; text-decoration:none;">lishuyu@uw.edu</a>.
+    <br><br>
     Cheers!
   </p>
 
