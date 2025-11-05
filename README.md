@@ -1,2 +1,2 @@
 # 2025_SFN
-Interactive Visualization red GECIs data 
+Interactive Visualization of red GECIs
