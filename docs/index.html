@@ -15,13 +15,14 @@
     }
     h1 { margin: 0 0 12px; font-size: 24px; color: var(--brand); }
     p.intro {
-      max-width: 1100px;          /* 限制最大宽度，但比原来更宽 */
-      width: 90%;                 /* 在大屏上自动适配 */
+      width: 100%;              /* 占满 body 的内容宽度 */
+      max-width: none;          /* 不再限制最大宽度 */
+      margin: 0 0 24px;         /* 取消左右 auto 居中，使其从左到右铺满 */
       font-size: 15px;
       color: #444;
       line-height: 1.7;
-      margin: 0 auto 32px;        /* auto 水平居中、底部空白更宽 */
-      text-align: justify;        /* 自动换行并两端对齐 */
+      text-align: justify;      /* 两端对齐（可选） */
+      hyphens: auto;            /* 浏览器支持时自动断词（可选） */
     }
     .grid {
       display: grid;
