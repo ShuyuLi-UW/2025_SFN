@@ -1,44 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Interactive Protein Data</title>
+  <meta charset="utf-8" />
+  <title>Interactive Protein Data – Overview</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
+    :root { --brand:#d14; --card:#ffffff; --ink:#222; --line:#e5e5e5; }
+    * { box-sizing: border-box; }
     body {
-      font-family: Arial, sans-serif;
-      background-color: #fafafa;
-      margin: 50px;
-      color: #333;
-      text-align: center;
+      margin: 24px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: #fafafa;
     }
-    h1 { color: #d14; }
-    a {
-      display: inline-block;
-      margin: 15px;
-      padding: 12px 20px;
-      font-size: 18px;
-      text-decoration: none;
-      border: 2px solid #d14;
+    h1 { margin: 0 0 16px; font-size: 22px; color: var(--brand); }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "a b"
+        "c c";
+      gap: 16px;
+    }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
       border-radius: 10px;
-      color: #d14;
-      transition: 0.2s;
+      padding: 12px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
     }
-    a:hover {
-      background-color: #d14;
-      color: white;
+    .panel h2 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .panel a.btn {
+      font-size: 13px; text-decoration: none; color: var(--brand);
+      border: 1px solid var(--brand); padding: 4px 8px; border-radius: 8px;
+    }
+    iframe {
+      width: 100%;
+      height: 520px;   /* 需要更高可调这里 */
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .a { grid-area: a; }
+    .b { grid-area: b; }
+    .c { grid-area: c; }
+    footer { margin-top: 18px; font-size: 12px; color:#666; }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; grid-template-areas: "a" "b" "c"; }
+      iframe { height: 460px; }
     }
   </style>
 </head>
 <body>
-  <h1>Interactive Calcium Imaging Results</h1>
-  <p>Select a dataset to explore:</p>
+  <h1>Interactive Calcium Imaging – Overview</h1>
 
-  <a href="interactive_purified.html" target="_blank">1 AP</a>
-  <a href="interactive_lineplots.html" target="_blank">10 AP</a>
-  <a href="interactive_timecourses.html" target="_blank">160 AP</a>
+  <div class="grid">
+    <section class="panel a">
+      <h2>
+        Purified proteins (4PL fits)
+        <a class="btn" href="interactive_purified.html" target="_blank">Open in new tab</a>
+      </h2>
+      <iframe src="interactive_purified.html" title="Purified 4PL"></iframe>
+    </section>
 
-  <p style="margin-top:40px;font-size:14px;color:#777;">
-    © Shuyui Li — 2025 SFN Poster
-  </p>
+    <section class="panel b">
+      <h2>
+        Summary line plots (mean ± SEM)
+        <a class="btn" href="interactive_lineplots.html" target="_blank">Open in new tab</a>
+      </h2>
+      <iframe src="interactive_lineplots.html" title="Line plots"></iframe>
+    </section>
+
+    <section class="panel c">
+      <h2>
+        Time courses (mean ± SEM)
+        <a class="btn" href="interactive_timecourses.html" target="_blank">Open in new tab</a>
+      </h2>
+      <iframe src="interactive_timecourses.html" title="Time courses"></iframe>
+    </section>
+  </div>
+
+  <footer>© Shuyui Li — 2025 SFN Poster</footer>
 </body>
 </html>
